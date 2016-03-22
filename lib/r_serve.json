@@ -1,0 +1,13 @@
+{
+   "maintainer": ["Varun Mittal <varun91@uw.edu>"],
+   "commands": [
+      ["add", "rserve.R /root/"],
+      ["add", "packages.R /tmp/"],
+      "Rscript /tmp/packages.R"
+   ],
+   "env_home": "/root/",
+   "depends": [
+      "r"
+   ],
+   "script": ["init.sh", {"remove": false}]
+}
