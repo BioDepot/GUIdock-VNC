@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Cytoscape-Benchmark
+Name[en_US]=Cytoscape-Benchmark
+Exec=lxterminal -e '/deps/testDocker/runCytoscapeTest.sh'
+Comment[en_US]=Cytoscape Benchmarking Utility
+StartupNotify=true
+

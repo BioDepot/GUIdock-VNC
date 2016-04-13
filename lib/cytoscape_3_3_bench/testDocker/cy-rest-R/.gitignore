@@ -1,0 +1,16 @@
+# History files
+.Rhistory
+
+# Example code in package build process
+*-Ex.R
+
+# R data files from past sessions
+.Rdata
+
+.Rproj.*
+*.Rproj
+.Rproj.user
+
+.DS_Store
+*rsconnect*
+*.dcf
