@@ -17,7 +17,7 @@ RUN apt-get install -y --force-yes --no-install-recommends openjdk-8-jre r-base-
 add http://chianti.ucsd.edu/cytoscape-3.3.0/cytoscape-3.3.0.tar.gz /deps/cytoscape-3.3.0.tar.gz
 add lib/cytoscape_3_3/cytoscape.desktop /usr/share/applications/cytoscape.desktop
 #--
-add lib/cytoscape_3_3/cytoscape_setup.sh /6c4f4e2f-864b-4e2e-a9fb-2efe36a8cf61
+add lib/cytoscape_3_3/cytoscape_setup.sh /1483fc26-9ae7-42c5-a85d-6dd573915d03
 add lib/cynetwork_bma/CyNetworkBMA-1.0.0_1.jar /deps/cytoscape-unix-3.3.0/apps/CyNetworkBMA-1.0.0_1.jar
 #--
 #r.json
@@ -30,7 +30,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 RUN pip install librabbitmq mongoengine 
 copy lib/broker_base/broker.tar.gz /
 #--
-add lib/broker_base/init.sh /bd442083-eee6-412b-99c2-937ea6b4b909
+add lib/broker_base/init.sh /3d909a39-0aa3-4ad4-88fb-dcd690cac9e9
 add lib/novnc/web /web/
 RUN pip install -r /web/requirements.txt 
 add lib/novnc/noVNC /noVNC/
@@ -45,12 +45,14 @@ RUN rm /tmp/deps.R
 copy lib/GUIdock/DEMO.tar.gz /
 copy lib/GUIdock/rserve.R /deps/
 #--
-add lib/GUIdock/init.sh /d1840994-e6b1-41fb-a59c-cb2910fc6e15
+add lib/GUIdock/init.sh /9a21ab28-8109-4b4e-bfd0-8b95f192aece
 #cytoscape_3_3_bench.json
 add lib/cytoscape_3_3_bench/packages_bench.R /tmp/packages_bench.R
 RUN Rscript /tmp/packages_bench.R 
 add lib/cytoscape_3_3_bench/testDocker /deps/testDocker
 add lib/cytoscape_3_3_bench/cytoscape_bench.desktop /usr/share/applications/cytoscape_bench.desktop
+add lib/cytoscape_3_3_bench/date_nanoseconds /usr/bin/date_nanoseconds
+RUN chmod +x /usr/bin/date_nanoseconds 
 #--
 RUN apt-get purge -y --force-yes r-base-dev python-pip build-essential python-dev python-pip python-dev build-essential
 RUN apt-get purge software-properties-common -y --force-yes
@@ -60,6 +62,6 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN rm -rf /tmp/*
 RUN rm -rf /var/tmp/*
 EXPOSE 6080
-RUN bash -c 'echo -e "#!/bin/bash\nchmod +x /6c4f4e2f-864b-4e2e-a9fb-2efe36a8cf61\n/bin/bash /6c4f4e2f-864b-4e2e-a9fb-2efe36a8cf61 \$@\nrm -rf /6c4f4e2f-864b-4e2e-a9fb-2efe36a8cf61\nchmod +x /bd442083-eee6-412b-99c2-937ea6b4b909\n/bin/bash /bd442083-eee6-412b-99c2-937ea6b4b909 \$@\nchmod +x /d1840994-e6b1-41fb-a59c-cb2910fc6e15\n/bin/bash /d1840994-e6b1-41fb-a59c-cb2910fc6e15 \$@\n/startup.sh \$@" >> /entrypoint.sh'
+RUN bash -c 'echo -e "#!/bin/bash\nchmod +x /1483fc26-9ae7-42c5-a85d-6dd573915d03\n/bin/bash /1483fc26-9ae7-42c5-a85d-6dd573915d03 \$@\nrm -rf /1483fc26-9ae7-42c5-a85d-6dd573915d03\nchmod +x /3d909a39-0aa3-4ad4-88fb-dcd690cac9e9\n/bin/bash /3d909a39-0aa3-4ad4-88fb-dcd690cac9e9 \$@\nchmod +x /9a21ab28-8109-4b4e-bfd0-8b95f192aece\n/bin/bash /9a21ab28-8109-4b4e-bfd0-8b95f192aece \$@\n/startup.sh \$@" >> /entrypoint.sh'
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
