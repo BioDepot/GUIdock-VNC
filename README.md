@@ -1,6 +1,6 @@
 # noVNC-CyNetworkBMA
 
-The purpose of this project is to address the issue of delivering graphical interface from Docker container. Our approach is by using the [https://kanaka.github.io/noVNC/ NoVNC solution], developed by Kanaka et.all.
+The purpose of this project is to address the issue of delivering graphical interface from Docker container. Our approach is by using the [noVNC](https://kanaka.github.io/noVNC/) solution, developed by Kanaka et.all.
 
 Basically, noVNC is to use browser as VNC client to the running container, giving more freedom and flexibility on having graphical applications running as a docker package.
 
