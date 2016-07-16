@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mkdir -p /var/run/sshd
-
 # create an ubuntu user
 # PASS=`pwgen -c -n -1 10`
 PASS=ubuntu

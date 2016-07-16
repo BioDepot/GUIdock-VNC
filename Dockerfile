@@ -8,7 +8,7 @@ RUN add-apt-repository -y 'ppa:openjdk-r/ppa'
 RUN add-apt-repository -y 'deb https://cran.rstudio.com/bin/linux/ubuntu/ trusty/'
 RUN add-apt-repository -y 'ppa:nginx/stable'
 RUN apt-get -y update --allow-unauthenticated
-RUN apt-get install -y --force-yes --no-install-recommends openjdk-8-jre r-base-dev r-base python-django python-pip build-essential python-dev python-oauth2 python-googleapi supervisor openssh-server pwgen sudo vim-tiny net-tools lxde x11vnc x11vnc-data xvfb gtk2-engines-murrine ttf-ubuntu-font-family nginx python-pip python-dev build-essential mesa-utils libgl1-mesa-dri libcurl4-openssl-dev libX11-dev libglu-dev libxml2-dev
+RUN apt-get install -y --force-yes --no-install-recommends openjdk-8-jre r-base-dev r-base python-django python-pip build-essential python-dev python-oauth2 python-googleapi supervisor pwgen sudo vim-tiny lxde x11vnc x11vnc-data xvfb nginx python-pip python-dev build-essential libcurl4-openssl-dev libX11-dev libglu-dev libxml2-dev
 #GUIdock.json
 #cynetwork_bma.json
 #cytoscape_3_3.json
@@ -17,7 +17,7 @@ RUN apt-get install -y --force-yes --no-install-recommends openjdk-8-jre r-base-
 add http://chianti.ucsd.edu/cytoscape-3.3.0/cytoscape-3.3.0.tar.gz /deps/cytoscape-3.3.0.tar.gz
 add lib/cytoscape_3_3/cytoscape.desktop /usr/share/applications/cytoscape.desktop
 #--
-add lib/cytoscape_3_3/cytoscape_setup.sh /bb17203f-2555-403c-9047-d48f0da696ac
+add lib/cytoscape_3_3/cytoscape_setup.sh /ff23b3c4-7a5f-47d3-b830-1e36fbf5b2c8
 add lib/cynetwork_bma/CyNetworkBMA-1.0.0_1.jar /deps/cytoscape-unix-3.3.0/apps/CyNetworkBMA-1.0.0_1.jar
 #--
 #r.json
@@ -30,14 +30,13 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 RUN pip install librabbitmq mongoengine 
 copy lib/broker_base/broker.tar.gz /
 #--
-add lib/broker_base/init.sh /6a3df16a-78ba-4a44-b997-77bc923e58eb
+add lib/broker_base/init.sh /fecf618b-c445-4d6f-b3a2-0652031b6762
 add lib/novnc/web /web/
 RUN pip install -r /web/requirements.txt 
 add lib/novnc/noVNC /noVNC/
 add lib/novnc/nginx.conf /etc/nginx/sites-enabled/default
 add lib/novnc/startup.sh /
 add lib/novnc/supervisord.conf /etc/supervisor/conf.d/
-add lib/novnc/doro-lxde-wallpapers /usr/share/doro-lxde-wallpapers/
 #--
 add lib/GUIdock/deps.R /tmp/deps.R
 RUN Rscript /tmp/deps.R 
@@ -45,7 +44,7 @@ RUN rm /tmp/deps.R
 copy lib/GUIdock/DEMO.tar.gz /
 copy lib/GUIdock/rserve.R /deps/
 #--
-add lib/GUIdock/init.sh /a06fc194-9f66-4c60-b133-ca125b5fbd02
+add lib/GUIdock/init.sh /3ef91016-5855-4839-adce-cd66e4c0d319
 #cytoscape_3_3_bench.json
 add lib/cytoscape_3_3_bench/packages_bench.R /tmp/packages_bench.R
 RUN Rscript /tmp/packages_bench.R 
@@ -64,6 +63,6 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN rm -rf /tmp/*
 RUN rm -rf /var/tmp/*
 EXPOSE 6080
-RUN bash -c 'echo -e "#!/bin/bash\nchmod +x /bb17203f-2555-403c-9047-d48f0da696ac\n/bin/bash /bb17203f-2555-403c-9047-d48f0da696ac \$@\nrm -rf /bb17203f-2555-403c-9047-d48f0da696ac\nchmod +x /6a3df16a-78ba-4a44-b997-77bc923e58eb\n/bin/bash /6a3df16a-78ba-4a44-b997-77bc923e58eb \$@\nchmod +x /a06fc194-9f66-4c60-b133-ca125b5fbd02\n/bin/bash /a06fc194-9f66-4c60-b133-ca125b5fbd02 \$@\n/startup.sh \$@" >> /entrypoint.sh'
+RUN bash -c 'echo -e "#!/bin/bash\nchmod +x /ff23b3c4-7a5f-47d3-b830-1e36fbf5b2c8\n/bin/bash /ff23b3c4-7a5f-47d3-b830-1e36fbf5b2c8 \$@\nrm -rf /ff23b3c4-7a5f-47d3-b830-1e36fbf5b2c8\nchmod +x /fecf618b-c445-4d6f-b3a2-0652031b6762\n/bin/bash /fecf618b-c445-4d6f-b3a2-0652031b6762 \$@\nchmod +x /3ef91016-5855-4839-adce-cd66e4c0d319\n/bin/bash /3ef91016-5855-4839-adce-cd66e4c0d319 \$@\n/startup.sh \$@" >> /entrypoint.sh'
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
