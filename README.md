@@ -12,6 +12,10 @@ A more detailed on how to get running is available [here](https://docs.docker.co
 ## About CyNetworkBMA
 CyNetworkBMA is a cytoscape plugin to infer gene networks using bayesian techniques. A more information about CynetworkBMA is available [here](http://www.ncbi.nlm.nih.gov/pubmed/26566394)
 
+## Demo
+
+[![Demo Video](media/demovideo.png)](https://www.youtube.com/embed/iaVPnLhOLg0)
+
 ## Running the container
 
 This container was tested on various operating systems (MacOS, Windows, Linux) and various environtments (laptop/desktop, Microsoft Azure Cloud, Google Cloud, and AWS). 
@@ -34,6 +38,7 @@ docker-machine ps
 # Get the docker machine IP
 docker-machine ip default
 ```
+
 
 # Contact
 You are invited to post a questions or sugesstion by pushing push request or sending 'issues' on this repo.
