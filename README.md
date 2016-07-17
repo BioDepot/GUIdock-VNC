@@ -6,6 +6,12 @@ Basically, noVNC is to use browser as VNC client to the running container, givin
 
 This package will get you: Cytoscape (a open source java application with GUI), R and Bioconductor, and CyNetworkBMA (a Cytoscape plug in to infer gene networks).
 
+## Installing Docker
+A more detailed on how to get running is available [here](https://docs.docker.com/engine/installation/)
+
+## About CyNetworkBMA
+CyNetworkBMA is a cytoscape plugin to infer gene networks using bayesian techniques. A more information about CynetworkBMA is available [here](http://www.ncbi.nlm.nih.gov/pubmed/26566394)
+
 ## Running the container
 
 This container was tested on various operating systems (MacOS, Windows, Linux) and various environtments (laptop/desktop, Microsoft Azure Cloud, Google Cloud, and AWS). 
