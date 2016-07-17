@@ -1,2 +1,2 @@
 library("Rserve")
-Rserve()
+Rserve(args="--no-save")
