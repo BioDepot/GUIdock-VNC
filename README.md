@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/version/biodepot/novnc-cynetworkbma.svg)](http://microbadger.com/images/biodepot/novnc-cynetworkbma "Get your own version badge on microbadger.com")
+
 # noVNC-CyNetworkBMA
 
 The purpose of this project is to address the issue of delivering graphical interface from Docker container. Our approach is by using the [noVNC](https://kanaka.github.io/noVNC/) solution, developed by Kanaka et.all.
