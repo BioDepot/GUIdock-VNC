@@ -1,4 +1,4 @@
-[![](https://images.microbadger.com/badges/version/biodepot/novnc-cynetworkbma.svg)](http://microbadger.com/images/biodepot/novnc-cynetworkbma "Get your own version badge on microbadger.com")
+ [![](https://images.microbadger.com/badges/image/biodepot/novnc-cynetworkbma.svg)](http://microbadger.com/images/biodepot/novnc-cynetworkbma "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/biodepot/novnc-cynetworkbma.svg)](http://microbadger.com/images/biodepot/novnc-cynetworkbma "Get your own version badge on microbadger.com")
 
 # noVNC-CyNetworkBMA
 
