@@ -8,6 +8,9 @@ Basically, noVNC is to use browser as VNC client to the running container, givin
 
 This package will get you: Cytoscape (a open source java application with GUI), R and Bioconductor, and CyNetworkBMA (a Cytoscape plug in to infer gene networks).
 
+## Publication
+GUIdock-VNC: Using a graphical desktop sharing system to provide a browser-based interface for containerized software. Varun Mittal, Ling-Hong Hung, Jayant Keswani, Daniel Kristiyanto, Sung Bong Lee and Ka Yee Yeung. Gigascience 2017, 6(4): 1-6. (https://academic.oup.com/gigascience/article/3052724/GUIdock-VNC:)
+
 ## Installing Docker
 A more detailed on how to get running is available [here](https://docs.docker.com/engine/installation/)
 
